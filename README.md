@@ -27,10 +27,11 @@ screenshots, or run `/soggyhotdog:store-screenshots`.
 
 ```
 codex plugin marketplace add barrettbreshears/soggyhotdog-plugins
+codex plugin add soggyhotdog@soggyhotdog
+codex mcp login soggyhotdog
 ```
 
-Then open Plugins in Codex, choose soggyhotdog from the soggyhotdog marketplace, install it and sign
-in. Ask for store screenshots.
+Or install it from Plugins in the Codex app. Then ask for store screenshots.
 
 ## Any other MCP client
 
