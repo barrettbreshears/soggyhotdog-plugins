@@ -1,0 +1,25 @@
+{
+  "name": "soggyhotdog",
+  "version": "1.0.0",
+  "description": "Make App Store and Google Play screenshots for the app you are working on. Your agent finds or captures the app's real screens, writes the headlines, makes and checks the images with soggyhotdog, and puts the files where fastlane expects them.",
+  "keywords": ["app store", "google play", "screenshots", "aso", "fastlane", "ios", "android", "mobile"],
+  "skills": "./skills",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "soggyhotdog",
+    "shortDescription": "Store-ready App Store and Play screenshots from your app's real screens",
+    "longDescription": "Ask for store screenshots and your agent does the whole job: reads the project to learn what the app does and its brand colors, captures clean screens from the simulator or emulator, writes the headlines, makes the set with soggyhotdog, checks every image, and drops the files into fastlane/ for deliver and supply. Needs a paid soggyhotdog plan; each image is one credit.",
+    "developerName": "soggyhotdog",
+    "category": "Design",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://soggyhotdog.com",
+    "defaultPrompt": [
+      "Make App Store screenshots for this app",
+      "Update our store screenshots with the app's new screens",
+      "Add German and Japanese versions of our store screenshots"
+    ],
+    "brandColor": "#E4572E",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/logo.png"
+  }
+}

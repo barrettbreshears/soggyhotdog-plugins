@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "soggyhotdog": {
+      "type": "http",
+      "url": "https://soggyhotdog.com/mcp"
+    }
+  }
+}

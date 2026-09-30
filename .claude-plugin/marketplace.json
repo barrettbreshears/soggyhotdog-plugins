@@ -1,0 +1,17 @@
+{
+  "name": "soggyhotdog",
+  "owner": {
+    "name": "soggyhotdog",
+    "url": "https://soggyhotdog.com"
+  },
+  "description": "soggyhotdog for coding agents: App Store and Google Play screenshots from your app's real screens.",
+  "plugins": [
+    {
+      "name": "soggyhotdog",
+      "source": "./plugins/soggyhotdog",
+      "description": "Make App Store and Google Play screenshots for the app you are working on, and put them where fastlane expects them.",
+      "version": "1.0.0",
+      "category": "design"
+    }
+  ]
+}
