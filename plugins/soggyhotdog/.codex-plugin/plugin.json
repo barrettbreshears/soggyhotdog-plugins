@@ -1,7 +1,15 @@
 {
   "name": "soggyhotdog",
-  "version": "1.0.0",
-  "description": "Make App Store and Google Play screenshots for the app you are working on. Your agent finds or captures the app's real screens, writes the headlines, makes and checks the images with soggyhotdog, and puts the files where fastlane expects them.",
+  "version": "1.1.0",
+  "description": "Design App Store and Google Play screenshots from your app's real screens: headlines, one consistent look, every store size and language, downloaded where your project expects them.",
+  "author": {
+    "name": "Sledge Dev Inc.",
+    "email": "support@soggyhotdog.com",
+    "url": "https://soggyhotdog.com"
+  },
+  "homepage": "https://soggyhotdog.com/docs/agents",
+  "repository": "https://github.com/barrettbreshears/soggyhotdog-plugins",
+  "license": "MIT",
   "keywords": [
     "app store",
     "google play",
@@ -12,28 +20,98 @@
     "android",
     "mobile"
   ],
-  "skills": "./skills",
+  "skills": "./skills/",
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "soggyhotdog",
-    "shortDescription": "Store-ready App Store and Play screenshots from your app's real screens",
-    "longDescription": "Ask for store screenshots and your agent does the whole job: reads the project to learn what the app does and its brand colors, captures clean screens from the simulator or emulator, writes the headlines, makes the set with soggyhotdog, checks every image, and drops the files into fastlane/ for deliver and supply. Needs a paid soggyhotdog plan; each image is one credit.",
-    "developerName": "soggyhotdog",
-    "category": "Design",
+    "shortDescription": "Store screenshots for your app",
+    "longDescription": "soggyhotdog designs the screenshots your app shows on the App Store and Google Play. Share your app's real screens and work through the set together: start a project from a sentence about the app or its App Store link, get a headline for each screen, make the whole set in one consistent look at the exact sizes each store requires, and ask for changes in plain words until every image is right. When the set is approved, add iPad and Android versions and other languages, and download the files, laid out for fastlane if your project uses it.\n\nYour real screens are placed into each design, not redrawn, and headlines are written only from what your app does, with no invented ratings or claims.\n\nIn Codex, the plugin also reads your project to learn the app, captures clean screens from the iOS Simulator or an Android emulator, and puts the finished files in fastlane/. Works with your soggyhotdog account.",
+    "developerName": "Sledge Dev Inc.",
+    "category": "Developer Tools",
     "capabilities": [
-      "Read",
-      "Write"
+      "Create and update screenshot projects",
+      "Add your app's screenshots",
+      "Write headlines and make the set",
+      "Change, remake and approve images",
+      "Add sizes and languages",
+      "Download files, including for fastlane"
     ],
     "websiteURL": "https://soggyhotdog.com/docs/agents",
+    "supportURL": "https://soggyhotdog.com/support",
     "privacyPolicyURL": "https://soggyhotdog.com/privacy",
     "termsOfServiceURL": "https://soggyhotdog.com/terms",
     "defaultPrompt": [
-      "Make App Store screenshots for this app",
-      "Update our store screenshots with the app's new screens",
-      "Add German and Japanese versions of our store screenshots"
+      "Make App Store screenshots for my app from these screens",
+      "Change the headline on image 2 and make it again",
+      "Download my screenshots in the fastlane layout"
     ],
     "brandColor": "#E4572E",
+    "brandColorDark": "#EF7651",
     "composerIcon": "./assets/icon.png",
     "logo": "./assets/logo.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Look at a finished image",
+              "prompt": "Show me the first screenshot in my Safe Snacker project.",
+              "tools_triggered": "list_projects, get_project, view_image",
+              "expected_behavior": "Finds the Safe Snacker project, shows image 1 and says its headline, 'Cook for everyone at your table'. Uses no credits."
+            },
+            {
+              "description": "Price a new language before spending",
+              "prompt": "What would a German version of my Safe Snacker screenshots cost?",
+              "tools_triggered": "list_projects, make_sizes_and_languages",
+              "expected_behavior": "Calls make_sizes_and_languages without confirm and reports the number of credits it would use. Makes nothing and spends nothing."
+            },
+            {
+              "description": "Change a headline and remake that image",
+              "prompt": "In Safe Snacker, change image 2's headline to 'Any recipe, safe in seconds' and make that image again.",
+              "tools_triggered": "get_project, set_words, remake_image, get_project",
+              "expected_behavior": "Asks before running the tools that overwrite and use a credit, saves the new headline, and starts a new version of image 2. Checking again shows it finished with the new headline."
+            },
+            {
+              "description": "Start a set from attached screenshots",
+              "prompt": "Make App Store screenshots for my recipe app, Safe Snacker Lite, from these two screens. It adapts recipes to food allergies.",
+              "tools_triggered": "create_project, add_screenshots, get_project, set_words, make_images",
+              "expected_behavior": "Creates a project, adds the two attached images as pages in order, waits for their headline ideas, sets headlines, and after confirmation makes two images.",
+              "file_attachment_urls": [
+                "https://soggyhotdog.com/review/safe-snacker-recipe.png",
+                "https://soggyhotdog.com/review/safe-snacker-plan.png"
+              ]
+            },
+            {
+              "description": "Download the finished set",
+              "prompt": "Give me download links for my Safe Snacker screenshots, laid out for fastlane.",
+              "tools_triggered": "list_projects, get_downloads",
+              "expected_behavior": "Returns a zip link and a link per file, named screenshots/en-US/iphone-6-9_01_... for fastlane deliver. Uses no credits."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Buying credits is not offered",
+              "prompt": "Buy me more soggyhotdog credits."
+            },
+            {
+              "description": "Not a general image generator",
+              "prompt": "Use soggyhotdog to make a picture of a cat in space."
+            },
+            {
+              "description": "Does not publish to the stores",
+              "prompt": "Upload my Safe Snacker screenshots to App Store Connect."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin sells nothing and takes no payments. Making images uses credits from the user's existing soggyhotdog plan, which is bought and managed only on soggyhotdog.com."
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "First release: make App Store and Google Play screenshots from your app's screens, change them in plain words, add sizes and languages, and download them, laid out for fastlane."
+      }
+    }
   }
 }

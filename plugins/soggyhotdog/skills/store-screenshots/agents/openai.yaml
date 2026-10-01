@@ -1,0 +1,9 @@
+interface:
+  display_name: "Store screenshots"
+  short_description: "Make App Store and Play screenshots for this app"
+  brand_color: "#E4572E"
+  default_prompt: "Make App Store screenshots for this app"
+policy:
+  # Works in a project on the user's machine; in ChatGPT the tools alone do the job.
+  products: [CODEX]
+  allow_implicit_invocation: true

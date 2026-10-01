@@ -1,0 +1,8 @@
+interface:
+  display_name: "Capture screenshots"
+  short_description: "Clean raw screens from the simulator or emulator"
+  brand_color: "#E4572E"
+policy:
+  # Runs the iOS Simulator or an Android emulator on the user's machine.
+  products: [CODEX]
+  allow_implicit_invocation: true

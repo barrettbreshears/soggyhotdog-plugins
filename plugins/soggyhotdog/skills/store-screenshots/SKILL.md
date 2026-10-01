@@ -20,7 +20,7 @@ cannot tell you.
   Play Console) unless the user explicitly asks.
 - **Never overwrite screenshots already in the repo** without asking. Move old ones aside instead.
 - **Demo data only** in captures: no real names, emails, messages, locations or anything personal.
-- If a tool says the account needs a paid plan or is out of credits, stop and pass on the link it gives.
+- If a tool says the account's plan does not include agents, or that it is out of credits, stop and tell the user.
 - `get_project` returns a `next` field. When unsure what to do, do that.
 
 ## 1. Connect
