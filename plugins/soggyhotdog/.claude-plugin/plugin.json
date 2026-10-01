@@ -6,8 +6,17 @@
     "name": "soggyhotdog",
     "url": "https://soggyhotdog.com"
   },
-  "homepage": "https://soggyhotdog.com/agents",
+  "homepage": "https://soggyhotdog.com/docs/agents",
   "repository": "https://github.com/barrettbreshears/soggyhotdog-plugins",
   "license": "MIT",
-  "keywords": ["app store", "google play", "screenshots", "aso", "fastlane", "ios", "android", "mobile"]
+  "keywords": [
+    "app store",
+    "google play",
+    "screenshots",
+    "aso",
+    "fastlane",
+    "ios",
+    "android",
+    "mobile"
+  ]
 }
