@@ -15,7 +15,7 @@ cannot tell you.
 - **Credits are money.** Every image made costs one credit (changes and remakes too; failures are
   refunded). Before the first spend, call `get_account` and tell the user what the set will cost and
   what they have. One yes covers making the set and a reasonable number of fixes; ask again before
-  anything bigger, and always before `make_sizes_and_languages` or `update_listing`.
+  anything bigger, and always before `make_sizes_and_languages` or `update_existing_store_screenshots`.
 - **Never upload to the stores** (fastlane `deliver` or `supply`, Transporter, App Store Connect,
   Play Console) unless the user explicitly asks.
 - **Never overwrite screenshots already in the repo** without asking. Move old ones aside instead.
@@ -57,7 +57,7 @@ look, use their words.
 
 Call `create_project` with `what_it_does`, `name`, `platform`, `look` or `look_description`,
 `brand_colors`, and `app_store_url` if there is one. If it reports that the App Store listing already
-has screenshots, ask the user: keep that design and put today's screens into it (`update_listing`,
+has screenshots, ask the user: keep that design and put today's screens into it (`update_existing_store_screenshots`,
 one credit per store image), or make a new set.
 
 ## 4. Get the raw screens

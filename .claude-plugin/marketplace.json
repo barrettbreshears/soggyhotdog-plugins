@@ -10,7 +10,7 @@
       "name": "soggyhotdog",
       "source": "./plugins/soggyhotdog",
       "description": "Make App Store and Google Play screenshots for the app you are working on, and put them where fastlane expects them.",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "category": "design"
     }
   ]
