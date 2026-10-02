@@ -1,6 +1,6 @@
 {
   "name": "soggyhotdog",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Make App Store and Google Play screenshots for the app you are working on. Your agent finds or captures the app's real screens, writes the headlines, makes and checks the images with soggyhotdog, and puts the files where fastlane expects them.",
   "author": {
     "name": "soggyhotdog",

@@ -1,6 +1,6 @@
 {
   "name": "soggyhotdog",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Design App Store and Google Play screenshots from your app's real screens: headlines, one consistent look, every store size and language, downloaded where your project expects them.",
   "author": {
     "name": "Sledge Dev Inc.",
@@ -105,6 +105,7 @@
             }
           ]
         },
+        "demo_recording_url": "https://youtu.be/O6fZgutT7i4",
         "commerce": false,
         "commerce_description": "The plugin sells nothing and takes no payments. Making images uses credits from the user's existing soggyhotdog plan, which is bought and managed only on soggyhotdog.com."
       },
